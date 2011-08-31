@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1DF58302-9A46-41F3-839A-800D1EE4AFBD}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jetty01</RootNamespace>
+    <AssemblyName>Jetty01</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Jetty01.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Jetty01.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <DesignData Include="SampleData\MainViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Icons\vector\basic_shellcommon_vectors.ai" />
+    <None Include="Assets\Icons\vector\License.rtf" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Assets\Icons\dark\appbar.add.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.back.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.basecircle.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.cancel.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.check.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.close.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.delete.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.download.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.edit.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.favs.addto.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.favs.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.feature.camera.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.feature.email.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.feature.search.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.feature.settings.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.feature.video.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.folder.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.minus.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.new.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.next.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.overflowdots.png" />
+    <Resource Include="Assets\Icons\dark\appbar.questionmark.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.refresh.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.save.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.share.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.stop.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.sync.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.transport.ff.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.transport.pause.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.transport.play.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.transport.rew.rest.png" />
+    <Resource Include="Assets\Icons\dark\appbar.upload.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.add.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.back.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.basecircle.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.cancel.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.check.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.close.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.delete.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.download.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.edit.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.favs.addto.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.favs.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.feature.camera.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.feature.email.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.feature.search.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.feature.settings.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.feature.video.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.folder.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.minus.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.new.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.next.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.overflowdots.png" />
+    <Resource Include="Assets\Icons\light\appbar.questionmark.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.refresh.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.save.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.share.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.stop.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.sync.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.transport.ff.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.transport.pause.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.transport.play.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.transport.rew.rest.png" />
+    <Resource Include="Assets\Icons\light\appbar.upload.rest.png" />
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="PanoramaBackground.png" />
+    <Resource Include="PanoramaBackground.jpg" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

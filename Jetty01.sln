@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jetty01", "Jetty01\Jetty01.csproj", "{1DF58302-9A46-41F3-839A-800D1EE4AFBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DF58302-9A46-41F3-839A-800D1EE4AFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF58302-9A46-41F3-839A-800D1EE4AFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF58302-9A46-41F3-839A-800D1EE4AFBD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1DF58302-9A46-41F3-839A-800D1EE4AFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF58302-9A46-41F3-839A-800D1EE4AFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF58302-9A46-41F3-839A-800D1EE4AFBD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

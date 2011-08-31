@@ -1,0 +1,78 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Jetty01.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+ 
+        <!--Panorama control-->
+        <controls:Panorama Title="jetty conditions">
+            <controls:Panorama.Background>
+                <ImageBrush ImageSource="PanoramaBackground.jpg"/>
+            </controls:Panorama.Background>
+ 
+            <!--Panorama item one-->
+            <controls:PanoramaItem>
+                <controls:PanoramaItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="forecast"/>
+                        <Button Grid.Column="2" BorderThickness="0" x:Name="Refresh" Click="Refresh_Click" VerticalAlignment="Bottom">
+                            <Grid>
+                                <Image Source="/Jetty01;component/Assets/Icons/dark/appbar.basecircle.rest.png" Width="48" Height="48"  HorizontalAlignment="Right"/>
+                                <Image Source="/Jetty01;component/Assets/Icons/dark/appbar.refresh.rest.png" Width="48" Height="48"  HorizontalAlignment="Right"/>
+                        </Grid>                            
+                        </Button>
+                    </Grid>
+                </controls:PanoramaItem.Header>
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                   <ProgressBar x:Name="forecastProgress" IsEnabled="{Binding ForecastLoading}" IsIndeterminate="{Binding ForecastLoading}"/>
+
+                     <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <TextBlock Text="{Binding SampleProperty}" TextWrapping="Wrap" />
+                    </ScrollViewer>
+                </Grid>
+            </controls:PanoramaItem>
+ 
+            <!--Panorama item two-->
+            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+            <controls:PanoramaItem Header="current">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock Text="Hat Island"/>
+                        <Image Source="http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WOTW07&amp;d=0&amp;k=test" />
+                        <TextBlock Text="Jetty Island"/>
+                        <Image Source="http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WA001&amp;d=0&amp;k=test" />
+                    </StackPanel>
+                </ScrollViewer>
+            </controls:PanoramaItem>
+            
+            <controls:PanoramaItem Header="tides">
+                
+            </controls:PanoramaItem>
+        </controls:Panorama>
+    </Grid>
+ 
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>
