@@ -31,8 +31,8 @@ namespace SteadyJetty
             client = new WebClient();
             client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(client_DownloadStringCompleted);
 
-            jettyWindImageUrl = "http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WA001&amp;d=0&amp;k=test";
-            hatIslandWindUrl = "http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WOTW07&amp;d=0&amp;k=test";
+            jettyWindImageUrl = "http://windonthewater.com/wg.php?s=WA002&1335825831370";
+            hatIslandWindUrl = "http://windonthewater.com/wg.php?s=WOTW07&1335825831299";
             tideUrl = "http://www.tide-forecast.com/tides/Poulsbo-LibertyBay-PugetSound-Washington.png";
         }
 

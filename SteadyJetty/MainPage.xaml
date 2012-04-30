@@ -60,7 +60,7 @@
                     <StackPanel>
                         <TextBlock Text="Hat Island"/>
                         <Image Source="{Binding HatIslandWindUrl}" />
-                        <TextBlock Text="Jetty Island"/>
+                        <TextBlock Text="Point No Point"/>
                         <Image Source="{Binding JettyWindImageUrl}" />
                     </StackPanel>
                 </ScrollViewer>
