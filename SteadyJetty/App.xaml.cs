@@ -13,7 +13,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
-namespace Jetty01
+namespace SteadyJetty
 {
     public partial class App : Application
     {

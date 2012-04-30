@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="Jetty01.MainPage"
+    x:Class="SteadyJetty.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -7,8 +7,7 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
-    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -16,7 +15,7 @@
     shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData.xaml}">
  
         <!--Panorama control-->
         <controls:Panorama Title="jetty conditions">
@@ -60,15 +59,20 @@
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <StackPanel>
                         <TextBlock Text="Hat Island"/>
-                        <Image Source="http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WOTW07&amp;d=0&amp;k=test" />
+                        <Image Source="{Binding HatIslandWindUrl}" />
                         <TextBlock Text="Jetty Island"/>
-                        <Image Source="http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WA001&amp;d=0&amp;k=test" />
+                        <Image Source="{Binding JettyWindImageUrl}" />
                     </StackPanel>
                 </ScrollViewer>
             </controls:PanoramaItem>
             
-            <controls:PanoramaItem Header="tides">
-                
+            <controls:PanoramaItem Header="tides" Orientation="Horizontal">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                    <StackPanel>
+                        <Image Source="{Binding TideUrl}">
+                        </Image>
+                    </StackPanel>
+                </ScrollViewer>
             </controls:PanoramaItem>
         </controls:Panorama>
     </Grid>

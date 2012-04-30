@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jetty01", "Jetty01\Jetty01.csproj", "{1DF58302-9A46-41F3-839A-800D1EE4AFBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteadyJetty", "SteadyJetty\SteadyJetty.csproj", "{1DF58302-9A46-41F3-839A-800D1EE4AFBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -15,17 +15,25 @@ using System.Collections.ObjectModel;
 using System.Net;
 
 
-namespace Jetty01
+namespace SteadyJetty
 {
     public class MainViewModel : INotifyPropertyChanged
     {
         WebClient client;
         bool forecastLoading = false;
+        private string jettyWindImageUrl;
+        private string hatIslandWindUrl;
+        private string tideUrl;
+
         public MainViewModel()
         {
             this.Items = new ObservableCollection<ItemViewModel>();
             client = new WebClient();
             client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(client_DownloadStringCompleted);
+
+            jettyWindImageUrl = "http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WA001&amp;d=0&amp;k=test";
+            hatIslandWindUrl = "http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WOTW07&amp;d=0&amp;k=test";
+            tideUrl = "http://www.tide-forecast.com/tides/Poulsbo-LibertyBay-PugetSound-Washington.png";
         }
 
         void client_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
@@ -45,7 +53,7 @@ namespace Jetty01
         public bool ForecastLoading
         {
             get { return forecastLoading; }
-            set 
+            set
             {
                 if (value != forecastLoading)
                 {
@@ -54,7 +62,7 @@ namespace Jetty01
                 }
             }
         }
-        
+
         private string _sampleProperty = "Loading...";
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding
@@ -76,6 +84,44 @@ namespace Jetty01
             }
         }
 
+        public string JettyWindImageUrl
+        {
+            get { return jettyWindImageUrl; }
+            set
+            {
+                if (value != jettyWindImageUrl)
+                {
+                    jettyWindImageUrl = value;
+                    NotifyPropertyChanged("JettyWindImageUrl");
+                }
+            }
+        }
+
+        public string HatIslandWindUrl
+        {
+            get { return hatIslandWindUrl; }
+            set
+            {
+                if (value != hatIslandWindUrl)
+                {
+                    hatIslandWindUrl = value;
+                    NotifyPropertyChanged("HatIslandWindUrl");
+                }
+            }
+        }
+
+        public string TideUrl
+        {
+            get { return tideUrl; }
+            set
+            {
+                if (value != tideUrl)
+                {
+                    tideUrl = value;
+                    NotifyPropertyChanged("TideUrl");
+                }
+            }
+        }
         public bool IsDataLoaded
         {
             get;
@@ -94,7 +140,7 @@ namespace Jetty01
 
         public void LoadTides()
         {
-            
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

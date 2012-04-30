@@ -1,0 +1,18 @@
+﻿<SteadyJetty:MainViewModel xmlns:SteadyJetty="clr-namespace:SteadyJetty" 
+                           JettyWindImageUrl="http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WA001&amp;d=0&amp;k=test" 
+                           HatIslandWindUrl="http://windonthewater.com/api/wind_graph.php?v=1&amp;s=WOTW07&amp;d=0&amp;k=test"
+                           TideUrl="http://www.tide-forecast.com/tides/Poulsbo-LibertyBay-PugetSound-Washington.png"
+                           ForecastLoading="True" IsDataLoaded="False" >
+    <SteadyJetty:MainViewModel.Items>
+        <SteadyJetty:ItemViewModel LineTwo="Aenean praesent accumsan vestibulum" LineOne="Cras maecenas aliquam class integer" LineThree="Nam duis"/>
+        <SteadyJetty:ItemViewModel LineTwo="Quisque mauris dis" LineOne="Curabitur phasellus" LineThree="Curae sed"/>
+        <SteadyJetty:ItemViewModel LineTwo="Consequat est aliquam hac amet" LineOne="Nunc vivamus nullam bibendum" LineThree="Adipiscing aptent auctor"/>
+        <SteadyJetty:ItemViewModel LineTwo="Dignissim faucibus arcu habitant" LineOne="Dictumst parturient ante convallis vestibulum" LineThree="Donec etiam eleifend vestibulum facilisi"/>
+        <SteadyJetty:ItemViewModel LineTwo="Lorem fringilla blandit habitasse" LineOne="Adipiscing congue elementum fusce inceptos" LineThree="Aliquet facilisis fermentum leo"/>
+        <SteadyJetty:ItemViewModel LineTwo="Commodo cursus" LineOne="Diam parturient" LineThree="Interdum mus"/>
+        <SteadyJetty:ItemViewModel LineTwo="Nec dictum" LineOne="Conubia vestibulum vestibulum lobortis" LineThree="Adipiscing morbi nascetur eget pharetra"/>
+        <SteadyJetty:ItemViewModel LineTwo="Ligula litora vestibulum hendrerit adipiscing" LineOne="Placerat pulvinar lectus elit libero" LineThree="Parturient non sagittis vestibulum"/>
+        <SteadyJetty:ItemViewModel LineTwo="Torquent vestibulum himenaeos imperdiet vestibulum" LineOne="Parturient nulla cubilia enim senectus" LineThree="Proin sociosqu augue erat suscipit"/>
+        <SteadyJetty:ItemViewModel LineTwo="Euismod vehicula sed volutpat dolor" LineOne="Adipiscing luctus per" LineThree="Ultrices dapibus egestas eros nibh"/>
+    </SteadyJetty:MainViewModel.Items>
+</SteadyJetty:MainViewModel>
