@@ -33,7 +33,7 @@ namespace SteadyJetty
 
             jettyWindImageUrl = "http://windonthewater.com/wg.php?s=WA002&1335825831370";
             hatIslandWindUrl = "http://windonthewater.com/wg.php?s=WOTW07&1335825831299";
-            tideUrl = "http://www.tide-forecast.com/tides/Poulsbo-LibertyBay-PugetSound-Washington.png";
+            tideUrl = string.Format("http://www.tide-forecast.com/tides/Everett-Washington.png?rnd={0}", Guid.NewGuid());
         }
 
         void client_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
