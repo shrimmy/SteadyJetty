@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
@@ -14,6 +15,12 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" Mode="Minimized">
+            <shell:ApplicationBarIconButton Text="Email" IconUri="/Assets/AppBar/appbar.feature.email.rest.png" Click="ApplicationBarIconButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData.xaml}">
  
@@ -48,7 +55,7 @@
                    <ProgressBar x:Name="forecastProgress" IsEnabled="{Binding ForecastLoading}" IsIndeterminate="{Binding ForecastLoading}"/>
 
                      <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                        <TextBlock Text="{Binding SampleProperty}" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding Forecast}" TextWrapping="Wrap" />
                     </ScrollViewer>
                 </Grid>
             </controls:PanoramaItem>
@@ -69,12 +76,24 @@
             <controls:PanoramaItem Header="tides" Orientation="Horizontal">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
                     <StackPanel>
-                        <Image Source="{Binding TideUrl}">
-                        </Image>
+                        <Border>
+                            <Border.RenderTransform>
+                                <CompositeTransform x:Name="tideImage"/>
+                            </Border.RenderTransform>
+                            <toolkit:GestureService.GestureListener>
+                                <toolkit:GestureListener
+                                    DragDelta="GestureListener_DragDelta"
+                                    DoubleTap="GestureListener_DoubleTap"
+                                    PinchStarted="GestureListener_PinchStarted"
+                                    PinchDelta="GestureListener_PinchDelta"/>
+                            </toolkit:GestureService.GestureListener>
+                            <Image Source="{Binding TideUrl}" />
+                        </Border>
                     </StackPanel>
                 </ScrollViewer>
             </controls:PanoramaItem>
         </controls:Panorama>
+
     </Grid>
  
     <!--Panorama-based applications should not show an ApplicationBar-->

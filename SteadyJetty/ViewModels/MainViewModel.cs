@@ -40,7 +40,7 @@ namespace SteadyJetty
         {
             if (e.Error == null)
             {
-                SampleProperty = e.Result;
+                Forecast = e.Result;
             }
             ForecastLoading = false;
         }
@@ -68,7 +68,7 @@ namespace SteadyJetty
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding
         /// </summary>
         /// <returns></returns>
-        public string SampleProperty
+        public string Forecast
         {
             get
             {
@@ -79,7 +79,7 @@ namespace SteadyJetty
                 if (value != _sampleProperty)
                 {
                     _sampleProperty = value;
-                    NotifyPropertyChanged("SampleProperty");
+                    NotifyPropertyChanged("Forecast");
                 }
             }
         }
